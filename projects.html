@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f2f0e8" />
+  <meta name="description" content="Hasan Çulu. Mühendis, elektronik müzik üreticisi ve sistem tasarımcısı." />
+  <title>Projects — Hasan Çulu</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preload" href="./assets/SayHelloWeb.otf" as="font" type="font/otf" crossorigin />
+</head>
+<body class="projects-page">
+  <a class="skip" href="#works">Projelere geç</a>
+  <header><a class="home-link" href="./index.html">Hasan Çulu ↖</a><nav class="corner-nav" aria-label="Bağlantılar">
+    <a href="https://www.instagram.com/canyoujustask" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+    <a href="https://www.youtube.com/@just-ask" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+  </nav></header>
+  <main>
+    <section id="works" class="works" aria-label="İşler">
+    <a class="page-link" href="./projects.html" aria-current="page">projects.html</a>
+      <details class="project" id="noron"><summary><span class="morph-line">Nöron</span><span class="plus" aria-hidden="true">+</span></summary><div class="project-body"><p>Olasılık kurallarını sürekli değişen bir müzik kompozisyonuna dönüştüren sistem.</p><a href="https://www.canyoujustask.com/turkce" target="_blank" rel="noopener noreferrer" class="morph-link"><span class="morph-link-label" data-morph-paragraph>Nöron</span> <span aria-hidden="true">↗</span></a></div></details>
+      <details class="project" id="tts"><summary><span class="morph-line">TTS</span><span class="plus" aria-hidden="true">+</span></summary><div class="project-body"><p>Ses sistemi geliştirme, müzikal uyarlama, kişiselleştirme, ses analizi ve teknik yöntem yazımı.</p><img src="/assets/tts.jpg" alt="TTS sistem taslağı" loading="lazy" width="1400" height="807" /><div class="video-links" aria-label="TTS videoları">
+        <a href="https://www.youtube.com/watch?v=20rX5-cXYVA" data-youtube="20rX5-cXYVA" target="_blank" rel="noopener noreferrer" class="morph-link"><span aria-hidden="true">▶</span> <span class="morph-link-label" data-morph-paragraph>TTS — Introduction</span></a>
+        <a href="https://www.youtube.com/watch?v=2ydC-YYsbGk" data-youtube="2ydC-YYsbGk" target="_blank" rel="noopener noreferrer" class="morph-link"><span aria-hidden="true">▶</span> <span class="morph-link-label" data-morph-paragraph>Game Integration</span></a>
+        <a href="https://www.youtube.com/watch?v=LpDvWQSLm3E" data-youtube="LpDvWQSLm3E" target="_blank" rel="noopener noreferrer" class="morph-link"><span aria-hidden="true">▶</span> <span class="morph-link-label" data-morph-paragraph>Human Interface Integration</span></a>
+      </div><a href="https://project-tts.com/" target="_blank" rel="noopener noreferrer" class="morph-link"><span class="morph-link-label" data-morph-paragraph>TTS</span> <span aria-hidden="true">↗</span></a></div></details>
+      <details class="project" id="ambient"><summary><span class="morph-line">Ambient Dialogues</span><span class="plus" aria-hidden="true">+</span></summary><div class="project-body"><p>Müzelerde ve sergilerde, ziyaretçilerin sesleriyle değişen müzik düzenekleri.</p><img src="/assets/ambient.jpg" alt="Ambient Dialogues arşiv görseli" loading="lazy" width="1400" height="1400" /><a href="https://www.canyoujustask.com/portfolio-collections/works/ambient-dialogues" target="_blank" rel="noopener noreferrer" class="morph-link"><span class="morph-link-label" data-morph-paragraph>Ambient Dialogues</span> <span aria-hidden="true">↗</span></a></div></details>
+      <details class="project" id="chair"><summary><span class="morph-line">Chair</span><span class="plus" aria-hidden="true">+</span></summary><div class="project-body"><p>Bir sandalyeyi çevresindeki elektromanyetik girişimleri duyulur hale getiren bir düzeneğe dönüştürmek.</p><img src="/assets/chair.jpg" alt="Chair ses yerleştirmesi" loading="lazy" width="1400" height="1050" /><a href="https://www.canyoujustask.com/portfolio-collections/works/chair" target="_blank" rel="noopener noreferrer" class="morph-link"><span class="morph-link-label" data-morph-paragraph>Chair</span> <span aria-hidden="true">↗</span></a></div></details>
+    </section>
+    <footer><a href="./index.html"><span class="morph-line">Hasan Çulu</span></a><a href="#works" aria-label="Projelere dön">↑</a></footer>
+  </main>
+  <div id="blob-controls" aria-label="Blob sesleri"></div>
+  <aside class="sound-panel" aria-label="Ses kontrolü"><button id="sound-toggle" aria-label="Sesi aç"><span class="sound-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="sound-label">Sesi aç</span></button><label class="volume-control"><span class="sr-only">Ses düzeyi</span><input id="volume" type="range" min="0" max="100" value="67" aria-valuetext="%67" /><output id="volume-value" for="volume">%67</output></label><div class="sound-info"><span class="signal-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="sound-status">SES</span></div><button id="motion-toggle" title="Hareketi azalt" aria-label="Hareketi azalt" aria-pressed="false">∿</button></aside>
+  <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body></html>

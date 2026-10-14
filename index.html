@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f2f0e8" />
+  <meta name="description" content="Hasan Çulu. Mühendis, elektronik müzik üreticisi ve sistem tasarımcısı." />
+  <title>Hasan Çulu</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preload" href="./assets/SayHelloWeb.otf" as="font" type="font/otf" crossorigin />
+</head>
+<body class="home-page">
+  <a class="skip" href="#intro">İçeriğe geç</a>
+  <header><nav class="corner-nav" aria-label="Bağlantılar">
+    <a href="https://www.instagram.com/canyoujustask" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+    <a href="https://www.youtube.com/@just-ask" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+  </nav></header>
+  <main id="intro">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="morph-line">Hasan Çulu</h1>
+      <p class="intro" data-morph-paragraph>Mühendis, elektronik müzik üreticisi ve sistem tasarımcısı.</p>
+      <a class="page-link" href="./projects.html">projects.html</a>
+    </section>
+  </main>
+  <div id="blob-controls" aria-label="Blob sesleri"></div>
+  <aside class="sound-panel" aria-label="Ses kontrolü"><button id="sound-toggle" aria-label="Sesi aç"><span class="sound-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="sound-label">Sesi aç</span></button><label class="volume-control"><span class="sr-only">Ses düzeyi</span><input id="volume" type="range" min="0" max="100" value="67" aria-valuetext="%67" /><output id="volume-value" for="volume">%67</output></label><div class="sound-info"><span class="signal-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="sound-status">SES</span></div><button id="motion-toggle" title="Hareketi azalt" aria-label="Hareketi azalt" aria-pressed="false">∿</button></aside>
+  <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body></html>
