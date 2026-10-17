@@ -84,17 +84,17 @@ export class Experience {
 
   private async loadFont() {
     try {
-      const response = await fetch(new URL('assets/SayHelloWeb.otf', document.baseURI));
+      const response = await fetch(new URL('assets/fonts/IBMPlexMono-Regular.otf', document.baseURI));
       if (!response.ok) throw new Error('Yazı tipi yüklenemedi');
       this.font = opentype.parse(await response.arrayBuffer());
-      await document.fonts.load('16px SayHello');
+      await document.fonts.load('16px "IBM Plex Mono"');
       await document.fonts.ready;
       this.buildText();
     } catch (error) { console.warn('Metin normal görünümde gösteriliyor.', error); }
   }
 
   private wrapParagraphs() {
-    for (const paragraph of document.querySelectorAll<HTMLElement>('.project-body p, [data-morph-paragraph]')) {
+    for (const paragraph of document.querySelectorAll<HTMLElement>('.project-body p:not([data-reading-copy]), [data-morph-paragraph]')) {
       if (paragraph.closest('details:not([open])')) continue;
       const layout = `${paragraph.getBoundingClientRect().width}|${getComputedStyle(paragraph).fontSize}|${getComputedStyle(paragraph).fontFamily}`;
       if (this.paragraphLayout.get(paragraph) === layout) continue;
@@ -297,7 +297,7 @@ export class Experience {
       const r = line.el.getBoundingClientRect(); line.x = r.left; line.y = r.top + scrollY;
     }
     this.blockers = [];
-    for (const el of document.querySelectorAll<HTMLElement>('.morph-line, .page-link, .project > summary .plus, .project-body p, .project-body a, .project-body img, .video-viewer, header, footer')) {
+    for (const el of document.querySelectorAll<HTMLElement>('.morph-line, .page-link, .project > summary .plus, .project-body p, .project-body a, .project-body img, [data-blob-blocker], .video-viewer, header, footer')) {
       if (hiddenByDetails(el) || !el.getClientRects().length) continue;
       const r = el.getBoundingClientRect();
       this.blockers.push({ left: r.left, right: r.right, top: r.top + scrollY, bottom: r.bottom + scrollY });
@@ -324,7 +324,7 @@ export class Experience {
         occupied.push(placement.bounds);
       }
     }
-    this.layoutReady = !!this.font && document.fonts.check('16px SayHello');
+    this.layoutReady = !!this.font && document.fonts.check('16px "IBM Plex Mono"');
   }
 
   private resize() {

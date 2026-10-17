@@ -3,6 +3,7 @@ import { SoundEngine } from './audio';
 import samples from 'virtual:audio-library';
 import { Experience } from './field';
 import { connectMedia } from './media';
+import { connectProjectContent } from './project-content';
 
 const audio = new SoundEngine(samples);
 const soundButton = document.querySelector<HTMLButtonElement>('#sound-toggle')!;
@@ -36,6 +37,7 @@ function updateAudio() {
 }
 audio.onChange = updateAudio;
 connectMedia(audio);
+connectProjectContent();
 soundButton.addEventListener('click', () => { if (audio.engaged) audio.stopAll(); else void selectSound(audio.resumeIndex); });
 try { experience = new Experience(audio, index => void selectSound(index)); }
 catch (error) { console.warn('Görsel etkileşim desteklenmiyor; içerik okunabilir durumda.', error); document.querySelector('.field-note')?.remove(); }
